@@ -16,6 +16,9 @@ function get_orientation_mode(){
 
 if (window.DeviceOrientationEvent) {
   window.addEventListener('deviceorientation', function(eventData) {
+
+
+    
     var tiltLR = Math.floor(eventData.gamma);
     $("#LR").text(tiltLR +300);
     var tiltFB = Math.floor(eventData.beta);
@@ -28,10 +31,10 @@ if (window.DeviceOrientationEvent) {
     if(tiltLR > 0){
       $(window).scrollLeft(0)
     }else{
-      $(window).scrollLeft(Math.abs(tiltLR*10));
+      $(window).scrollLeft(Math.abs(tiltLR*20));
     }
 
-    $(".video-wrapper").css("top", tiltFB*4 + "%");
+
 
   }, false);
 }
