@@ -1,3 +1,7 @@
 video{
   width: auto !important;
 }
+
+.play-button{
+	background-color: rgba(0,0,0,0.5);
+}
