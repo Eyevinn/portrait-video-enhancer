@@ -26,16 +26,14 @@ if (window.DeviceOrientationEvent) {
 
     $("#log2").text(right_pos);
 
-    if(parseInt($("video").css("right")) > right_pos) {
-      $(".video-wrapper").css("left", -$(window).width());
-    }
+
     if(tiltLR > 0){
       $(".video-wrapper").css("left", 0)
     }else{
-      $(".video-wrapper").css("left", tiltLR*4 + "%");
+      $(".video-wrapper").css("left", tiltLR*2 + "%");
     }
 
-    $(".video-wrapper").css("top", tiltFB*4 + "%");
+    $(".video-wrapper").css("top", tiltFB*2 + "%");
 
   }, false);
 }
