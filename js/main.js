@@ -66,26 +66,23 @@ $(document).ready(function(){
 
   $(".play-button").click( function(){
     console.log("click");
-   /*playButton.find('span').toggleClass('glyphicon-pause glyphicon-play');*/
+    $(this).find('i').toggleClass('fa-pause fa-play');
    togglePlay();
  })
  function togglePlay() {
    console.log(isPlaying);
   if (isPlaying) {
     videoPlayer.pause()
-    $(".play-button").innerHTML="Play";
     console.log("if");
     isPlaying = false;
-    //playButton.innerHTML='Pause';
-    //playButton.style.backgroundColor = '#91D7F3 ';
 
   } else {
     console.log("else");
     videoPlayer.play();
-    $(".play-button").innerHTML="Pause";
+    $(this).find('i.fa').removeClass('fa-play');
+    $(this).find("i.fa").addClass('fa-pause');
     isPlaying = true;
-   // playButton.innerHTML='Play';
-   // playButton.style.backgroundColor = '#C9EAF8 ';
+
   }
  };
 
