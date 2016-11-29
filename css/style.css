@@ -19,11 +19,12 @@ video{
 }
 
 #control-buttons-container {
-	margin: 0 auto;
-	width: 100%;
+	left: 10%;
+	
 	position: absolute;
 	bottom: 0;
 }
+
 
 .control-buttons{
 	float: left;
@@ -32,6 +33,7 @@ video{
 	width: 30px;
 	height: 30px;
 	padding: 10px;
+	/*border-style: solid;*/
 	border-color: rgba(0,0,0,0.1);
 	border-radius: 5px;
 	text-align: center;

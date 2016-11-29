@@ -56,6 +56,7 @@ $(document).ready(function(){
   var isPlaying = false;
   var portrait = get_orientation_mode();
   var videoPlayer = $("video")[0];
+  $("#control-buttons-container").center();
   $(window).on("orientationchange",function(){
     portrait = get_orientation_mode();
     if(portrait){
