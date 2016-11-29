@@ -1,7 +1,6 @@
 function get_orientation_mode(){
   var width = $(window).width();
   var height = $(window).height();
-
   if(height > width){
     return true;
   }else{
@@ -9,43 +8,31 @@ function get_orientation_mode(){
   }
 };
 
+function check_change(value, old_value){
+  return Math.abs(old_value - value);
+}
+
 $.fn.center = function () {
 		$(this).css("left", ($(window).width() - this.width()) /2);
 	};
 
-
-
-
 if (window.DeviceOrientationEvent) {
   window.addEventListener('deviceorientation', function(eventData) {
-
-
-
     var tiltLR = Math.floor(eventData.gamma);
-    $("#LR").text(tiltLR +300);
+    //$("#LR").text(tiltLR +300);
     var tiltFB = Math.floor(eventData.beta);
-    $("#FB").text(tiltFB);
-
+    //$("#FB").text(tiltFB);
     var right_pos = $("video").width() - $(window).width();
-
-    $("#log2").text(right_pos);
-
+    //$("#log2").text(right_pos);
     if(tiltLR > 0){
       $(".video-wrapper").scrollLeft(0)
-    }else{
-      $(".video-wrapper").scrollLeft(Math.abs(tiltLR*20));
+    }else if(check_change(tiltLR, $(".video-wrapper").scrollLeft())>25){
+      $(".video-wrapper").scrollLeft(Math.abs(tiltLR*12));
     }
-
-
-
   }, false);
 }
 
-
-
-
 $.fn.zoom = function () {
-
   var w_height = $(window).height();
   console.log(w_height);
   $(this).css("height", w_height +"px");
@@ -71,13 +58,13 @@ $(document).ready(function(){
   $("#play-button").click( function(){
     $("#play-button").find('i.fa').toggleClass('fa-pause fa-play');
     togglePlay();
-  })
+  });
+
   function togglePlay() {
    console.log(isPlaying);
    if (isPlaying) {
     videoPlayer.pause()
     isPlaying = false;
-
   } else {
     videoPlayer.play();
     isPlaying = true;
