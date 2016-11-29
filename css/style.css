@@ -1,5 +1,7 @@
 video{
   width: auto !important;
+  min-width: 100%;
+  min-height: 100%;
 
 }
 

@@ -19,8 +19,10 @@ if (window.DeviceOrientationEvent) {
     $("#LR").text(tiltLR);
     var tiltFB = eventData.beta;
     $("#FB").text(tiltFB);
-    $(".video-wrapper").css("top", tiltFB*2 + "px")
-    $(".video-wrapper").css("left", tiltLR*2 + "px")
+
+
+    $(".video-wrapper").css("top", tiltFB*4 + "%")
+    $(".video-wrapper").css("left", tiltLR*4 + "%")
   }, false);
 }
 
@@ -35,6 +37,7 @@ $.fn.zoom = function () {
 };
 
 $(document).ready(function(){
+  $("video").zoom();
   var isPlaying = false;
   var portrait = get_orientation_mode();
   var videoPlayer = $("video")[0];
