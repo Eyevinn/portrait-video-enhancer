@@ -11,7 +11,7 @@ function get_orientation_mode(){
 
 
 
-var right_pos = $("video").width() - $(window).width();
+
 
 
 if (window.DeviceOrientationEvent) {
@@ -22,7 +22,7 @@ if (window.DeviceOrientationEvent) {
     var tiltFB = Math.floor(eventData.beta);
     $("#FB").text(tiltFB);
 
-
+    var right_pos = $("video").width() - $(window).width();
 
     $("#log2").text(right_pos);
 
@@ -30,9 +30,10 @@ if (window.DeviceOrientationEvent) {
     if(tiltLR > 0){
       $(".video-wrapper").css("left", 0)
     }else if (parseInt($(".video-wrapper").css("right")) > right_pos) {
-
+        alert("hit the wall")
     }else{
       $(".video-wrapper").css("left", tiltLR*4 + "%")
+
     }
 
 
@@ -66,23 +67,26 @@ $(document).ready(function(){
 
   $(".play-button").click( function(){
     console.log("click");
-    $(this).find('i').toggleClass('fa-pause fa-play');
+   /*playButton.find('span').toggleClass('glyphicon-pause glyphicon-play');*/
    togglePlay();
  })
  function togglePlay() {
    console.log(isPlaying);
   if (isPlaying) {
     videoPlayer.pause()
+    $(".play-button").innerHTML="Play";
     console.log("if");
     isPlaying = false;
+    //playButton.innerHTML='Pause';
+    //playButton.style.backgroundColor = '#91D7F3 ';
 
   } else {
     console.log("else");
     videoPlayer.play();
-    $(this).find('i.fa').removeClass('fa-play');
-    $(this).find("i.fa").addClass('fa-pause');
+    $(".play-button").innerHTML="Pause";
     isPlaying = true;
-
+   // playButton.innerHTML='Play';
+   // playButton.style.backgroundColor = '#C9EAF8 ';
   }
  };
 
