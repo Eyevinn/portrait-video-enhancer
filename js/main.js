@@ -26,11 +26,11 @@ if (window.DeviceOrientationEvent) {
 
     $("#log2").text(right_pos);
 
-
+    if(parseInt($("video").css("right")) > right_pos) {
+      $(".video-wrapper").css("left", -$(window).width());
+    }
     if(tiltLR > 0){
       $(".video-wrapper").css("left", 0)
-    }else if (parseInt($("video").css("right")) > right_pos) {
-      $(".video-wrapper").css("right", $(window).width());
     }else{
       $(".video-wrapper").css("left", tiltLR*4 + "%");
     }
@@ -55,7 +55,6 @@ $(document).ready(function(){
   var isPlaying = false;
   var portrait = get_orientation_mode();
   var videoPlayer = $("video")[0];
-  videoPlayer.volume = 0.7;
   $(window).on("orientationchange",function(){
     portrait = get_orientation_mode();
     if(portrait){
@@ -90,10 +89,12 @@ $(document).ready(function(){
   }
  };
  $("#volume-up").click( function(){
-    videoPlayer.volume += 0.05;
+    videoPlayer.volume += 0.1;
+    console.log("Volume: " + videoPlayer.volume);
  })
  $("#volume-down").click( function(){
-    videoPlayer.volume -= 0.05;
+    videoPlayer.volume -= 0.1;
+    console.log("Volume: " + videoPlayer.volume);
  })
 
 
