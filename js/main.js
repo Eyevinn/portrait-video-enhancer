@@ -10,7 +10,9 @@ function get_orientation_mode(){
 };
 
 
-
+function check_collide(el, right_pos){
+  if(el.css("right")>)
+}
 
 
 
@@ -29,14 +31,13 @@ if (window.DeviceOrientationEvent) {
 
     if(tiltLR > 0){
       $(".video-wrapper").css("left", 0)
-    }else if (parseInt($(".video-wrapper").css("right")) > right_pos) {
-        alert("hit the wall")
+    }else if (parseInt($("video").css("right")) > right_pos) {
+      $(".video-wrapper").css("right", $(window).width());
     }else{
-      $(".video-wrapper").css("left", tiltLR*4 + "%")
-
+      $(".video-wrapper").css("left", tiltLR*4 + "%");
     }
 
-
+    $(".video-wrapper").css("top", tiltFB*4 + "%");
 
   }, false);
 }
@@ -65,7 +66,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".play-button").click( function(){
+  $("#play-button").click( function(){
     console.log("click");
    /*playButton.find('span').toggleClass('glyphicon-pause glyphicon-play');*/
    togglePlay();

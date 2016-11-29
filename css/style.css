@@ -1,3 +1,7 @@
+body{
+  width: auto;
+}
+
 video{
   width: auto !important;
   min-height: 100%;
