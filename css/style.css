@@ -17,6 +17,7 @@ video{
 
 .control-buttons{
 	float: left;
+	margin: 1px;
 	z-index: 1000;
 	width: 30px;
 	height: 30px;
