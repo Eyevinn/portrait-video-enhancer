@@ -9,7 +9,9 @@ function get_orientation_mode(){
   }
 };
 
-
+$.fn.center = function () {
+		$(this).css("left", ($(window).width() - this.width()) /2);
+	};
 
 
 
