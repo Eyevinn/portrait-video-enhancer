@@ -11,6 +11,8 @@ function get_orientation_mode(){
 
 
 
+var right_pos = $("video").width() - $(window).width();
+
 
 if (window.DeviceOrientationEvent) {
 
@@ -19,13 +21,21 @@ if (window.DeviceOrientationEvent) {
     $("#LR").text(tiltLR);
     var tiltFB = Math.floor(eventData.beta);
     $("#FB").text(tiltFB);
+
+
+
+    $("#log2").text(right_pos);
+
+
     if(tiltLR > 0){
       $(".video-wrapper").css("left", 0)
+    }else if (parseInt($(".video-wrapper").css("right")) > right_pos) {
+
     }else{
       $(".video-wrapper").css("left", tiltLR*4 + "%")
     }
 
-    $(".video-wrapper").css("top", tiltFB*4 + "%")
+
 
   }, false);
 }

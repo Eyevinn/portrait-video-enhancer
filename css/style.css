@@ -4,6 +4,11 @@ video{
   position: relative;
 
 }
+
+.video-wrapper{
+  position: relative;
+}
+
 .play-button{
 	position: absolute;
 	z-index: 1000;
