@@ -8,6 +8,9 @@ video{
   position: relative;
 
 }
+.player-wrapper {
+	position: relative;
+}
 
 .video-wrapper{
   position: relative;
@@ -16,9 +19,9 @@ video{
 }
 
 #control-buttons-container {
-	left: 50%;
+	left: 10%;
 	width: 100%;
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 }
 
