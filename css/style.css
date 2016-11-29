@@ -4,12 +4,6 @@ video{
   min-height: 100%;
 
 }
-
-.video-wrapper{
-  position: relative;
-
-}
-
 .play-button{
 	background-color: rgba(0,0,0,0.5);
 }
