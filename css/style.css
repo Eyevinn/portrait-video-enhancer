@@ -11,6 +11,8 @@ video{
 
 .video-wrapper{
   position: relative;
+  max-width: 100%;
+  overflow-x: scroll;
 }
 
 #control-buttons-container {
@@ -33,14 +35,8 @@ video{
 	border-radius: 5px;
 	text-align: center;
 	background-color: rgba(255,255,255,0.5);
-
-	bottom: 0;
-  left: 50%;
 	background: -webkit-linear-gradient(left top, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* For Safari 5.1 to 6.0 */
 	background: -o-linear-gradient(bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* For Opera 11.1 to 12.0 */
 	background: -moz-linear-gradient(bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* Standard syntax */
-
-
-
 }

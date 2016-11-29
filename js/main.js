@@ -18,7 +18,7 @@ if (window.DeviceOrientationEvent) {
   window.addEventListener('deviceorientation', function(eventData) {
 
 
-    
+
     var tiltLR = Math.floor(eventData.gamma);
     $("#LR").text(tiltLR +300);
     var tiltFB = Math.floor(eventData.beta);
@@ -29,9 +29,9 @@ if (window.DeviceOrientationEvent) {
     $("#log2").text(right_pos);
 
     if(tiltLR > 0){
-      $(window).scrollLeft(0)
+      $(".video-wrapper").scrollLeft(0)
     }else{
-      $(window).scrollLeft(Math.abs(tiltLR*20));
+      $(".video-wrapper").scrollLeft(Math.abs(tiltLR*20));
     }
 
 
@@ -62,39 +62,45 @@ $(document).ready(function(){
       //$("video").css("zoom", "100%");
     }
   });
+  var isMuted = false;
+  var lastVolume = videoPlayer.volume;
 
   $("#play-button").click( function(){
-    console.log("click");
-   /*playButton.find('span').toggleClass('glyphicon-pause glyphicon-play');*/
-   togglePlay();
- })
- function togglePlay() {
+    $("#play-button").find('i.fa').toggleClass('fa-pause fa-play');
+    togglePlay();
+  })
+  function togglePlay() {
    console.log(isPlaying);
-  if (isPlaying) {
+   if (isPlaying) {
     videoPlayer.pause()
-    $(".play-button").innerHTML="Play";
-    console.log("if");
     isPlaying = false;
-    //playButton.innerHTML='Pause';
-    //playButton.style.backgroundColor = '#91D7F3 ';
 
   } else {
-    console.log("else");
     videoPlayer.play();
-    $(".play-button").innerHTML="Pause";
     isPlaying = true;
-   // playButton.innerHTML='Play';
-   // playButton.style.backgroundColor = '#C9EAF8 ';
   }
- };
- $("#volume-up").click( function(){
-    videoPlayer.volume += 0.1;
-    console.log("Volume: " + videoPlayer.volume);
- })
- $("#volume-down").click( function(){
-    videoPlayer.volume -= 0.1;
-    console.log("Volume: " + videoPlayer.volume);
- })
+};
+$("#volume-up").click( function(){
+  videoPlayer.volume += 0.1;
+  console.log("Volume: " + videoPlayer.volume);
+})
+$("#volume-down").click( function(){
+  videoPlayer.volume -= 0.1;
+  console.log("Volume: " + videoPlayer.volume);
+})
+$("#volume-mute").click( function(){
+  toggleMute()
+})
+  function toggleMute() {
+   if (isMuted == true) {
+      videoPlayer.volume = lastVolume;
+      isMuted = false;
+  } else {
+      lastVolume = videoPlayer.volume;
+      videoPlayer.volume = 0;
+      isMuted = true;
+  }
+};
 
 
 
