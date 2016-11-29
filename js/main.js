@@ -15,14 +15,18 @@ function get_orientation_mode(){
 if (window.DeviceOrientationEvent) {
 
   window.addEventListener('deviceorientation', function(eventData) {
-    var tiltLR = eventData.gamma;
+    var tiltLR = Math.floor(eventData.gamma);
     $("#LR").text(tiltLR);
-    var tiltFB = eventData.beta;
+    var tiltFB = Math.floor(eventData.beta);
     $("#FB").text(tiltFB);
-
+    if(tiltLR > 0){
+      $(".video-wrapper").css("left", 0)
+    }else{
+      $(".video-wrapper").css("left", tiltLR*4 + "%")
+    }
 
     $(".video-wrapper").css("top", tiltFB*4 + "%")
-    $(".video-wrapper").css("left", tiltLR*4 + "%")
+
   }, false);
 }
 
