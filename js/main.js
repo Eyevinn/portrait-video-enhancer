@@ -15,10 +15,9 @@ function get_orientation_mode(){
 
 
 if (window.DeviceOrientationEvent) {
-
   window.addEventListener('deviceorientation', function(eventData) {
     var tiltLR = Math.floor(eventData.gamma);
-    $("#LR").text(tiltLR);
+    $("#LR").text(tiltLR +300);
     var tiltFB = Math.floor(eventData.beta);
     $("#FB").text(tiltFB);
 
@@ -26,14 +25,13 @@ if (window.DeviceOrientationEvent) {
 
     $("#log2").text(right_pos);
 
-
     if(tiltLR > 0){
-      $(".video-wrapper").css("left", 0)
+      $(window).scrollLeft(0)
     }else{
-      $(".video-wrapper").css("left", tiltLR*2 + "%");
+      $(window).scrollLeft(Math.abs(tiltLR*10));
     }
 
-    $(".video-wrapper").css("top", tiltFB*2 + "%");
+    $(".video-wrapper").css("top", tiltFB*4 + "%");
 
   }, false);
 }
