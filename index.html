@@ -6,14 +6,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
-    
+    <div class="video-wrapper">
+      <video  id="my-video" class="video-js" preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}" playsinline>
 
-    <video width="320" height="240" controls>
-      <source src="video1.mp4" type="video/mp4">
-    </video>
+        <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type='video/mp4'>
+
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
+      <div class="play-button">
+        Start
+      </div>
+    </div>
+
+
 
   </body>
 </html>
