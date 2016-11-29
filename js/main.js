@@ -63,6 +63,7 @@ $(document).ready(function(){
    console.log(isPlaying);
   if (isPlaying) {
     videoPlayer.pause()
+    $(".play-button").innerHTML="Play";
     console.log("if");
     isPlaying = false;
     //playButton.innerHTML='Pause';
@@ -71,6 +72,7 @@ $(document).ready(function(){
   } else {
     console.log("else");
     videoPlayer.play();
+    $(".play-button").innerHTML="Pause";
     isPlaying = true;
    // playButton.innerHTML='Play';
    // playButton.style.backgroundColor = '#C9EAF8 ';
