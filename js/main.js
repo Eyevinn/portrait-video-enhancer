@@ -10,9 +10,7 @@ function get_orientation_mode(){
 };
 
 
-function check_collide(el, right_pos){
-  if(el.css("right")>)
-}
+
 
 
 
