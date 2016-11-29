@@ -12,7 +12,17 @@ function get_orientation_mode(){
 
 
 
+if (window.DeviceOrientationEvent) {
 
+  window.addEventListener('deviceorientation', function(eventData) {
+    var tiltLR = eventData.gamma;
+    $("#LR").text(tiltLR);
+    var tiltFB = eventData.beta;
+    $("#FB").text(tiltFB);
+    $(".video-wrapper").css("top", tiltFB*2 + "px")
+    $(".video-wrapper").css("left", tiltLR*2 + "px")
+  }, false);
+}
 
 
 
