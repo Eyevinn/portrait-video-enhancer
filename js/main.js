@@ -57,6 +57,7 @@ $(document).ready(function(){
   var isPlaying = false;
   var portrait = get_orientation_mode();
   var videoPlayer = $("video")[0];
+  videoPlayer.volume = 0.7;
   $(window).on("orientationchange",function(){
     portrait = get_orientation_mode();
     if(portrait){
@@ -90,5 +91,13 @@ $(document).ready(function(){
    // playButton.style.backgroundColor = '#C9EAF8 ';
   }
  };
+ $("#volume-up").click( function(){
+    videoPlayer.volume += 0.05;
+ })
+ $("#volume-down").click( function(){
+    videoPlayer.volume -= 0.05;
+ })
+
+
 
 });
