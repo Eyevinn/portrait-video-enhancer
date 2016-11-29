@@ -64,7 +64,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".play-button").click( function(){
+  $("#play-button").click( function(){
     console.log("click");
     $(this).find('i').toggleClass('fa-pause fa-play');
    togglePlay();
