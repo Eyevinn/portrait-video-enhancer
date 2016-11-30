@@ -15,6 +15,9 @@ function init_tiltable(){
   '<div id="volume-mute" class="control-buttons">'+
   '<i class="fa fa-volume-off"></i>'+
   '</div>'+
+  '<div id="toggle-zoom" class="control-buttons">'+
+  '<i class="fa fa-arrows-alt"></i>'+
+  '</div>'+
   '</div>')
   $( ".player-wrapper" ).append(buttons);
 
@@ -72,7 +75,7 @@ if (window.DeviceOrientationEvent) {
 $(document).ready(function(){
   init_tiltable();
   $(".tiltable")[0].play();
-  $(".zoom-btn").click(function(){
+  $("#toggle-zoom").click(function(){
     toggle_zoom();
 
   });
