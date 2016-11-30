@@ -2,9 +2,25 @@ function init_tiltable(){
   $(".tiltable").wrap("<div class='video-wrapper'></div>")
 }
 
-function full_height(el){
+function full_height(){
   $(".tiltable").css("height", $(window).height()+"px");
 }
+
+function initial_height(){
+  $(".tiltable").css("height", "100%");
+}
+
+function toggle_zoom(){
+  console.log($(".tiltable").css("height"))
+  console.log($(window).height())
+  if(parseInt($(".tiltable").css("height")) == $(window).height()){
+    initial_height();
+  }else{
+    full_height();
+  }
+}
+
+
 
 
 function check_change(value, old_value){
@@ -35,7 +51,7 @@ $(document).ready(function(){
   init_tiltable();
   $(".tiltable")[0].play();
   $(".zoom-btn").click(function(){
-    full_height($(this));
+    toggle_zoom();
 
   });
 })
