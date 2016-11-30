@@ -29,8 +29,7 @@ function initial_height(){
 }
 
 function toggle_zoom(){
-  console.log($(".tiltable").css("height"))
-  console.log($(window).height())
+
   if(parseInt($(".tiltable").css("height")) == $(window).height()){
     initial_height();
   }else{
