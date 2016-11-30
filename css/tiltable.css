@@ -3,6 +3,9 @@
   height: 100%;
   position: relative;
 }
+.player-wrapper {
+	position: relative;
+}
 
 .video-wrapper{
   max-width: 100%;

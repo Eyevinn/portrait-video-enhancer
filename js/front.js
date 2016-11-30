@@ -41,17 +41,15 @@ $("#volume-down").click( function(){
 $("#volume-mute").click( function(){
   toggleMute()
 })
-  function toggleMute() {
-   if (isMuted == true) {
-      videoPlayer.volume = lastVolume;
-      isMuted = false;
-  } else {
-      lastVolume = videoPlayer.volume;
-      videoPlayer.volume = 0;
-      isMuted = true;
-  }
+function toggleMute() {
+ if (isMuted == true) {
+  videoPlayer.volume = lastVolume;
+  isMuted = false;
+} else {
+  lastVolume = videoPlayer.volume;
+  videoPlayer.volume = 0;
+  isMuted = true;
+}
 };
-
-
 
 });

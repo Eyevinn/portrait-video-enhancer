@@ -3,19 +3,19 @@ function init_tiltable(){
   $(".video-wrapper").wrap("<div class='player-wrapper'></div>")
 
   var buttons = $('<div id="control-buttons-container">'+
-      '<div id="play-button" class="control-buttons">'+
-        '<i class="fa fa-play"></i>'+
-      '</div>'+
-      '<div id="volume-up" class="control-buttons">'+
-        '<i class="fa fa-volume-up"></i>'+
-      '</div>'+
-      '<div id="volume-down" class="control-buttons">'+
-        '<i class="fa fa-volume-down"></i>'+
-      '</div>'+
-      '<div id="volume-mute" class="control-buttons">'+
-        '<i class="fa fa-volume-off"></i>'+
-      '</div>'+
-    '</div>')
+  '<div id="play-button" class="control-buttons">'+
+  '<i class="fa fa-play"></i>'+
+  '</div>'+
+  '<div id="volume-up" class="control-buttons">'+
+  '<i class="fa fa-volume-up"></i>'+
+  '</div>'+
+  '<div id="volume-down" class="control-buttons">'+
+  '<i class="fa fa-volume-down"></i>'+
+  '</div>'+
+  '<div id="volume-mute" class="control-buttons">'+
+  '<i class="fa fa-volume-off"></i>'+
+  '</div>'+
+  '</div>')
   $( ".player-wrapper" ).append(buttons);
 
 }
