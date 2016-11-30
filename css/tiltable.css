@@ -1,21 +1,18 @@
-body{
-  width: auto;
-}
-
-video{
+.tiltable{
   width: auto !important;
-  min-height: 100%;
+  
   position: relative;
-
 }
 .player-wrapper {
 	position: relative;
 }
 
 .video-wrapper{
-  position: relative;
   max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
   overflow-x: scroll;
+  position: relative;
 }
 
 #control-buttons-container {
@@ -40,8 +37,3 @@ video{
 	background: -moz-linear-gradient(bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.3)); /* Standard syntax */
 }
-
-@media only screen and (max-device-width: 480px) {
-		#volume-up, #volume-down, #volume-mute {
-			display: none;
-		}
