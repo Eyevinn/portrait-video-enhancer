@@ -1,13 +1,8 @@
 {
   "name": "portrait-video-enhancer",
   "version": "1.0.0",
-  "description": "",
+  "description": "Enhance videos in portrait mode and enable sidescroll by tilting mobile device",
   "main": "server.js",
-  "dependencies": {
-    "connect": "^3.5.0",
-    "serve-static": "^1.11.1"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,10 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/Eyevinn/portrait-video-enhancer.git"
   },
-  "author": "",
+  "author": "Simon Wallin & Marilia Bognandi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Eyevinn/portrait-video-enhancer/issues"
   },
-  "homepage": "https://github.com/Eyevinn/portrait-video-enhancer#readme"
+  "homepage": "https://github.com/Eyevinn/portrait-video-enhancer#readme",
+  "dependencies": {
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1"
+  }
 }
